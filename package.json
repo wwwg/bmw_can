@@ -1,0 +1,7 @@
+{
+	"name": "bmw_can",
+	"author": "wwwg",
+	"dependencies": {
+		"serialport": "*"
+	}
+}
