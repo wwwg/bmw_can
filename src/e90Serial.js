@@ -11,4 +11,15 @@ const e90Serial = class e90Serial extends EventEmitter {
 		  baudrate: KCAN_BAUD
 		});
 	}
+	writeRaw(data) {
+		let me = this;
+		return new Promise((resolve, reject) => {
+			port.write(data, err => {
+				if (err)
+					reject(err);
+				else
+					resolve();
+			});
+		});
+	}
 }
