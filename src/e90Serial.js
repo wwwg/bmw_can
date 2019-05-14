@@ -38,7 +38,7 @@ const e90Serial = class e90Serial extends EventEmitter {
 		});
 	}
 }
-e90Serial.locateCanInterface = () => {
+e90Serial.locateCANInterface = () => {
 	return new Promise((resolve, reject) => {
 		SerialPort.list().then(arr => {
 			// todo
