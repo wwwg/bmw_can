@@ -1,4 +1,4 @@
-const SerialPort = require("serialport").SerialPort;
+const SerialPort = require("serialport");
 const EventEmitter = require('events');
 
 const KCAN_BAUD = 100000; // Baud rate on KCAN 1 line
