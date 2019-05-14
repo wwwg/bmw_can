@@ -14,16 +14,16 @@ const e90Serial = class e90Serial extends EventEmitter {
 		this.port.on('error', (err) => {
 			me.emit('error', err);
 		});
-		this.port.open(err => {
+		this.port.on('data', data => {
+			// todo
+			console.log("recieved:", data);
+		});
+		this.port.on('open', (err) => {
 			if (err) {
 				me.emit('error', err);
 				return;
 			}
 			me.emit('open');
-		});
-		this.port.on('data', data => {
-			// todo
-			console.log("recieved:", data);
 		});
 	}
 	writeRaw(data) {
