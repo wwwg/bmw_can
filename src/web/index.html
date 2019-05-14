@@ -4,8 +4,18 @@
 <head>
 	<title>bmw_can</title>
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gauge.js/1.3.6/gauge.js"></script>
+	<style type="text/css">
+		#rpm-holder {
+			position: absolute;
+			top: 5%;
+			left: 50%;
+			transform: translate(5%, -50%);
+		}
+	</style>
 </head>
 <body>
-
+	<div id="rpm-holder">
+		<span id="rpms">0000</span> RPM
+	</div>
 </body>
 </html>
