@@ -46,3 +46,4 @@ e90Serial.locateCANInterface = () => {
 		});
 	});
 }
+module.exports = e90Serial;
