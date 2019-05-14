@@ -9,7 +9,7 @@ const e90Serial = class e90Serial extends EventEmitter {
 		super();
 		let me = this;
 		this.port = new SerialPort(device, {
-		  baudrate: KCAN_BAUD
+		  baudRate: KCAN_BAUD
 		});
 		this.port.on('error', (err) => {
 			me.emit('error', err);
