@@ -44,9 +44,13 @@ e90Serial.locateCANInterface = () => {
 			let canInterface;
 			for (let i = 0; i < arr.length; ++i) {
 				let interface = arr[i];
-				console.log(interface);
-				console.log();
+				if (interface.pnpId.includes('D-CAN')) {
+					// Located interface with D-CANin pnpId
+					canInterface = interface;
+					break;
+				}
 			}
+			resolve(canInterface);
 		});
 	});
 }
