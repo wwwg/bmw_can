@@ -7,8 +7,23 @@ const e90Serial = class e90Serial extends EventEmitter {
 	// device must be a K-CAN USB interface
 	constructor(device) {
 		super();
+		let me = this;
 		this.port = new SerialPort(device, {
 		  baudrate: KCAN_BAUD
+		});
+		this.port.on('error', (err) => {
+			me.emit('error', err);
+		});
+		this.port.open(err => {
+			if (err) {
+				me.emit('error', err);
+				return;
+			}
+			me.emit('open');
+		});
+		this.port.on('data', data => {
+			// todo
+			console.log("recieved:", data);
 		});
 	}
 	writeRaw(data) {
