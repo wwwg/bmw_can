@@ -4,18 +4,31 @@
 <head>
 	<title>bmw_can</title>
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gauge.js/1.3.6/gauge.js"></script>
+	<script type="text/javascript" src="web.js"></script>
 	<style type="text/css">
+		@import url('https://fonts.googleapis.com/css?family=Gothic+A1');
+
+		body {
+			font-family: 'Gothic A1', sans-serif;
+		}
 		#rpm-holder {
 			position: absolute;
-			top: 5%;
+			top: 10%;
 			left: 50%;
-			transform: translate(5%, -50%);
+			transform: translate(-50%, -10%);
+			font-size: 200%;
+		}
+		#rpms {
+			font-size: 500%;
 		}
 	</style>
 </head>
 <body>
 	<div id="rpm-holder">
-		<span id="rpms">0000</span> RPM
+		<span id="rpms">0000</span> rpm
 	</div>
+	<br>
+	<canvas id="tqGauge"></canvas>
+	<canvas id="hpGauge"></canvas>
 </body>
 </html>
